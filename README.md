@@ -19,3 +19,7 @@ pnpm run dev
 Scan the QRCode in the terminal with your LynxExplorer App to see the result.
 
 You can start editing the page by modifying `src/App.tsx`. The page auto-updates as you edit the file.
+
+## React Native version
+
+A React Native equivalent of this app (same tab structure and screen flow) is available at `react-native/App.tsx`, with setup notes in `react-native/README.md`.
