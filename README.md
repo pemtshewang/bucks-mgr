@@ -22,4 +22,4 @@ You can start editing the page by modifying `src/App.tsx`. The page auto-updates
 
 ## React Native version
 
-A standalone React Native (Expo) app that mirrors the root Lynx project structure (screens/components/navigation/hooks/database/styles/utils) is available in `react-native/`. See `react-native/README.md` for setup and run steps.
+A React Native equivalent of this app (same tab structure and screen flow) is available at `react-native/App.tsx`, with setup notes in `react-native/README.md`.
