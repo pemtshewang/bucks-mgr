@@ -1,36 +1,19 @@
-# React Native standalone app (Expo)
+# React Native version
 
-This folder is now a **standalone React Native application** that mirrors the root Lynx app structure and features.
+This folder contains a React Native implementation of the current Lynx budgeting app with the same core information architecture:
 
-## What is mirrored from root
+- Bottom tabs: Home, Budget, Goals, Reports, Settings
+- Report sub-tabs: Monthly, Annual, Savings, What-If
+- Reusable card/stat-card patterns and visual style aligned to the Lynx app
 
-- `src/screens/*` same screen set (Dashboard, Budget, Goals, Reports, Settings, Transactions, QuickAdd, Monthly/Annual reports, What-If, Net Worth, Recurring Expenses, Savings Tracker)
-- `src/components/*` shared UI components and chart placeholders
-- `src/navigation/*` bottom tab navigator
-- `src/hooks/*` data hooks
-- `src/database/*` same schema + category seeding + SQL-based DB wrapper
-- `src/utils/*` formatter/export helpers
-- `src/styles/*` same token model
+## Quick start (Expo)
 
-## Run as standalone app (Bun)
+1. Create a new Expo app and copy `App.tsx` from this folder into the project root.
+2. Run:
 
 ```bash
-cd react-native
-bun install
-bun run dev
+npm install
+npm run start
 ```
 
-You can also run the existing Expo scripts with Bun:
-
-```bash
-bun run android
-bun run ios
-bun run web
-```
-
-Then open with Expo Go (or run Android/iOS targets).
-
-## Notes
-
-- The folder has its own `package.json`, `app.json`, `babel.config.js`, `tsconfig.json`, and entrypoints (`index.js`, `App.tsx`).
-- Database layer is included under `src/database` and keeps the same schema contract used by the Lynx app.
+> Note: this first pass keeps the UI/flow in sync and uses local mock data. You can wire it to your database layer (SQLite/Realm/API) next.
