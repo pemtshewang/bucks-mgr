@@ -4,16 +4,14 @@ import { defineConfig } from '@lynx-js/rspeedy';
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
 
 export default defineConfig({
-  server: {
-    host: '0.0.0.0',   // 🔥 Important
-    port: 3000,        // or whatever port you use
-  },
   plugins: [
-    pluginQRCode({
-      schema(url) {
-        return `${url}?fullscreen=true`;
-      },
-    }),
+pluginQRCode({
+  schema(url) {
+    // const ngrokUrl = url.replace(/^http:\/\/[^/]+/, 'https://right-natural-skunk.ngrok-free.app');
+    // return `${ngrokUrl}?fullscreen=true&ngrok-skip-browser-warning=true`;
+    return `${url}?fullscreen=true`;
+  },
+}),
     pluginReactLynx(),
     pluginTypeCheck(),
   ],
