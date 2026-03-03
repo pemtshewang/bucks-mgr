@@ -1,8 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 import { DEFAULT_CATEGORIES, SCHEMA } from './schema';
 
-const DATABASE_NAME = 'budget_app.db';
-
 export async function migrateDbIfNeeded(db: SQLite.SQLiteDatabase) {
   const DATABASE_VERSION = 1;
   let result = await db.getFirstAsync<{ user_version: number }>(
@@ -17,7 +15,6 @@ export async function migrateDbIfNeeded(db: SQLite.SQLiteDatabase) {
   if (currentDbVersion === 0) {
     await db.execAsync(SCHEMA);
 
-    // Seed categories
     for (const cat of DEFAULT_CATEGORIES) {
       await db.runAsync(
         'INSERT INTO categories (name, color, icon, type, monthly_limit) VALUES (?, ?, ?, ?, ?)',

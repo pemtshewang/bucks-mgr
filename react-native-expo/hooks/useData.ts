@@ -55,7 +55,6 @@ export function useBudget() {
 
   const fetchCategories = useCallback(async () => {
     if (!db) return;
-    // Calculate spent per category for current month
     const currentMonth = new Date().getMonth() + 1;
     const currentYear = new Date().getFullYear();
     const res = await db.getAllAsync(
